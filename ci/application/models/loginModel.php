@@ -1,5 +1,6 @@
 <?php 
 class LoginModel extends CI_Model{
+
 	public function loginAuth($data){
 		// $this->db->select('team , password ');
 		// $this->db->from('challenges');
@@ -25,6 +26,10 @@ class LoginModel extends CI_Model{
 		// $next = $this->db->get();
 		// return $next->row();
 
+	}
+	public function showAll(){
+		$this->load->database();
+		return $this->db->get('data')->result();
 	}
 }
 

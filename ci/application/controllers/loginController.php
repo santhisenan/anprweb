@@ -6,6 +6,8 @@ class LoginController extends CI_Controller {
 		$this->clear_cache();		
 		$this->load->library('session');
 		$this->load->model('loginModel');
+		$this->load->helper('form');
+
 	}
 	public function index(){
 		$this->load->view('loginView');
@@ -53,6 +55,11 @@ class LoginController extends CI_Controller {
 			}
 		}
 
+	}
+
+	public function displayAll(){
+		$data['items'] = $this->loginModel->showAll();
+		$this->load->view('dbView',$data);
 	}
 
 	public function logout(){

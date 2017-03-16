@@ -11,13 +11,33 @@
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
 </head>
 	<body>
-<form action="displayAll">
-		<button class="btn-primary">Show database</button>
-
-</form>
-<form action="logout"></form>
-	<button class="btn-primary">Logout</button>
+	
+	<h1>Database</h1> 
+	<table class="table">
+		<caption>Vehicle Data</caption>
+		<thead>
+		<tr>
+			<th>Id</th>
+			<th>Reg. No</th>
+			<th>Time</th>
+			<th>Description</th>
+		</tr>
+			
+		</thead>
+		<tbody>
+		<?php foreach($items as $item){ ?>
+			<tr>
+			<td><?php	echo $item->id;  ?></td>
+			<td><?php	echo $item->regNo;  ?></td>
+			<td><?php 	echo $item->time; ?></td>
+			<td><?php 	echo $item->descr; ?></td>
+			</tr>
+			<?php 	} ?>
+		</tbody>
+	</table>
 
 		
 	</body>
 </html>
+
+
